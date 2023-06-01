@@ -1,0 +1,1 @@
+[{"id":1,"nome":"Mouse","cor":"Vermelho","preco":19.99,"estoque":10,"codigo":"ABC123","publicacao":true,"data_criacao":"2023-05-25"},{"id":2,"nome":"Teclado","cor":"Azul","preco":24.99,"estoque":5,"codigo":"DEF456","publicacao":false,"data_criacao":"2023-05-26"}]
