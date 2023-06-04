@@ -36,6 +36,7 @@ func main() {
 	router.Run(":8080") //para iniciar o servidor web na porta 8080
 }
 
+//handler para retornar a lista de produtos
 func GetProducts(c *gin.Context) {
 	products := []Product{
 		{1, "Produto 1", 19.99},
@@ -66,3 +67,41 @@ func GetTransactions(c *gin.Context) {
 	c.JSON(200, transactions)
 }
 
+func GetAll(c *gin.Context) {
+	allData := struct {
+		Products     []Product     `json:"products"`
+		Users        []User        `json:"users"`
+		Transactions []Transaction `json:"transactions"`
+	}{
+		GetProductsData(),
+		GetUsersData(),
+		GetTransactionsData(),
+	}
+
+	c.JSON(200, allData)
+}
+
+// Função para obter os dados dos produtos
+func GetProductsData() []Product {
+	products := []Product{
+		{1, "Produto 1", 19.99},
+		{2, "Produto 2", 24.99},
+		{3, "Produto 3", 29.99},
+	}
+
+	return products
+}
+
+// Função para obter os dados dos usuários
+func GetUsersData() []User {
+	users := []User{
+		{1, "Usuário 1", "usuario1@example.com"},
+		{2, "Usuário 2", "usuario2@example.com"},
+		{3, "Usuário 3", "usuario3@example.com"},
+	}
+
+	return users
+}
+
+// Função para obter os dados das transações
+func GetTransactionsData()
