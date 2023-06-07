@@ -8,8 +8,11 @@ import (
 )
 
  type Entity struct {
-	 ID int `json:"id"`
-	 Data string `json:"data"`
+	 ID         int `json:"id"`
+	 Nome    string `json:"nome"`
+	 Tipo    string `json:"tipo"`
+	 Quantidade int `json:"quantidade"`
+	 Preco  float64 `json:"preco"`
  }
 
  var (
